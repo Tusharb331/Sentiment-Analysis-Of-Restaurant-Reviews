@@ -1,34 +1,76 @@
-Overview
-This project focuses on sentiment analysis of restaurant reviews using machine learning techniques. It aims to classify reviews as either positive or negative based on the text content.
+# Sentiment Analysis of Restaurant Reviews
 
-Dependencies
-numpy and pandas for data manipulation
-nltk for natural language processing tasks
-sklearn for machine learning models and evaluation metrics
-Dataset
-The dataset (Restaurant_Reviews.tsv) contains 996 reviews labeled as liked (1) or not liked (0). After cleaning, duplicates were removed, resulting in 996 unique reviews.
 
-Preprocessing
-Cleaned the reviews by removing special characters and converting text to lowercase.
-Removed stopwords and performed stemming using the Porter Stemmer from NLTK.
-Model Building
-Utilized the Bag of Words model with CountVectorizer to convert text data into numerical features.
-Split the data into training and test sets for model evaluation.
-Model Evaluation
-Evaluated three classifiers:
-Multinomial Naive Bayes
-Logistic Regression
-Bernoulli Naive Bayes
-Results
-Achieved an accuracy of approximately 76.5% with both Multinomial Naive Bayes and Bernoulli Naive Bayes models on the test set.
-Precision and recall scores were also calculated to assess model performance.
-Prediction Functionality
-Implemented a function (predict_review) to predict sentiment (positive or negative) of new restaurant reviews based on trained models.
-Example Predictions
-Reviewed several sample messages to demonstrate the prediction capability:
-"The food is really good here." - Predicted as Positive Review
-"Food was pretty bad and the service was very slow." - Predicted as Negative Review
-"I liked the food, it was very good." - Predicted as Positive Review
-"The food was burnt, it was smelling bad." - Predicted as Negative Review
-Conclusion
-This project showcases the application of machine learning for sentiment analysis in the context of restaurant reviews, providing insights into the sentiment of customer feedback.
+## Overview
+
+This project focuses on sentiment analysis using machine learning techniques. The goal is to classify the sentiment of textual data into positive, negative, or neutral categories.
+
+## Technologies Used
+
+- Python
+- NLTK (Natural Language Toolkit)
+- Scikit-learn
+- Jupyter Notebook
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/sentiment-analysis.git
+   cd sentiment-analysis
+
+2. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+
+3. Download NLTK resources:
+
+   ```bash
+   import nltk
+   nltk.download('stopwords')
+
+4. Run the Jupyter notebook Restaurant_Review_Sentiment_Analysis.ipynb to see the step-by-step analysis, preprocessing of data, model training, and evaluation.
+
+## Description
+
+### Data Cleaning
+The reviews are cleaned by:
+- Removing special characters
+- Converting to lowercase
+- Removing stopwords
+- Stemming
+
+### Feature Extraction
+The Bag of Words model (using CountVectorizer) is used to convert text data into numerical feature vectors.
+
+### Model Training
+Three models are trained:
+- **Multinomial Naive Bayes**
+- **Bernoulli Naive Bayes**
+- **Logistic Regression**
+
+### Model Evaluation
+Each model is evaluated on:
+- Accuracy
+- Precision
+- Recall
+
+### Results
+- **Multinomial Naive Bayes**: Accuracy - 76.5%, Precision - 0.78, Recall - 0.78
+- **Bernoulli Naive Bayes**: Accuracy - 76.5%, Precision - 0.79, Recall - 0.76
+- **Logistic Regression**: Accuracy - 75.0%, Precision - 0.82, Recall - 0.68
+
+## Prediction
+
+You can predict the sentiment (positive/negative) of your review messages using the trained models.
+
+### Example
+
+```python
+from sentiment_analysis import predict_review
+
+msg = 'The food is really good here.'
+prediction = predict_review(msg)
+print(f"Sentiment: {'Positive' if prediction else 'Negative'} Review")
