@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project focuses on sentiment analysis using machine learning techniques. The goal is to classify the sentiment of textual data into positive, negative, or neutral categories. By leveraging various machine learning algorithms, this project aims to provide insights into customer opinions expressed in restaurant reviews.
+This project focuses on sentiment analysis using machine learning techniques. The goal is to classify the sentiment of textual data into positive or negative categories. By leveraging various machine learning algorithms, this project aims to provide insights into customer opinions expressed in restaurant reviews.
 
 ## Technologies Used
 
